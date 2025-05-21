@@ -1,0 +1,58 @@
+# Full librechat.yaml with base config + custom models
+
+server:
+  port: 3080
+  host: 0.0.0.0
+
+ui:
+  defaultTheme: dark
+  chat:
+    showModelSwitcher: true
+    defaultModel: vertex_claude
+
+logging:
+  level: info
+
+aiEndpoints:
+  vertexai:
+    enabled: true
+    default: vertex_claude
+    models:
+      - id: vertex_claude
+        name: Claude 3.5 Haiku (Vertex)
+        provider: vertexai
+        model: claude-3-haiku@latest
+        title_convo: true
+        vision: false
+        embeddings: false
+
+      - id: vertex_llama
+        name: LLaMA 4 Scout (Vertex)
+        provider: vertexai
+        model: llama-3-70b-instruct
+        title_convo: true
+        vision: false
+        embeddings: false
+
+  togetherai:
+    enabled: true
+    default: null
+    models:
+      - id: together_flux
+        name: FLUX.1 (Image Generator)
+        provider: togetherai
+        model: black-forest-labs/FLUX.1-schnell-Free
+        type: image
+        title_convo: false
+
+  perplexity:
+    enabled: true
+    default: perplexity_sonar
+    models:
+      - id: perplexity_sonar
+        name: Perplexity Sonar Pro
+        provider: perplexity
+        model: sonar-pro
+        type: chat
+        title_convo: true
+
