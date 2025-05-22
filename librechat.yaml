@@ -1,5 +1,8 @@
 # Full librechat.yaml with base config + custom models
 
+version: "1.0"
+
+# Full librechat.yaml with base config + custom models
 server:
   port: 3080
   host: 0.0.0.0
@@ -56,3 +59,4 @@ aiEndpoints:
         type: chat
         title_convo: true
 
+ 
