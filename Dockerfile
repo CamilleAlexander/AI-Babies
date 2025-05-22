@@ -19,6 +19,7 @@ WORKDIR /app
 
 USER node
 
+COPY librechat.yaml ./librechat.yaml
 COPY --chown=node:node . .
 
 RUN \
