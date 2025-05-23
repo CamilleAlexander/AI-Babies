@@ -2,26 +2,18 @@
 
 version: "1.0"
 
-aiEndpoints:
-  togetherai:
-    enabled: true
+providers:
+  - name: "Perplexity"
+    apiKey: "${PERPLEXITY_API_KEY}"
+    baseURL: "https://api.perplexity.ai/"
     models:
-      - id: together_flux
-        name: FLUX.1 (Together AI)
-        provider: togetherai
-        model: black-forest-labs/FLUX.1-schnell-Free
-        type: image
-        title_convo: false
+      default: ["sonar-pro"]
+    titleConvo: true
+    ...
 
-  perplexity:
-    enabled: true
-    default: perplexity_sonar
+  - name: "TogetherAI"
+    apiKey: "${TOGETHERAI_API_KEY}"
+    baseURL: "https://api.together.ai"
     models:
-      - id: perplexity_sonar
-        name: Sonar Pro
-        provider: perplexity
-        model: sonar-pro
-        type: chat
-        title_convo: true
-
- 
+      default: ["black-forest-labs/FLUX.1-schnell-Free"]
+    ...
