@@ -8,12 +8,26 @@ providers:
     baseURL: "https://api.perplexity.ai/"
     models:
       default: ["sonar-pro"]
+    fetch: false
     titleConvo: true
-    ...
+    titleModel: "sonar-pro"
+    summarize: false
+    forcePrompt: false
+    dropParams: ["stop", "frequency_penalty"]
+    modelDisplayLabel: "Perplexity"
 
   - name: "TogetherAI"
     apiKey: "${TOGETHERAI_API_KEY}"
     baseURL: "https://api.together.ai"
     models:
       default: ["black-forest-labs/FLUX.1-schnell-Free"]
-    ...
+    fetch: true
+    modelDisplayLabel: "Together AI"
+
+  - name: "GoogleVertex"
+    projectId: "${GOOGLE_PROJECT_ID}"
+    location: "${GOOGLE_LOCATION}"
+    credentialsFile: "${GOOGLE_SERVICE_ACCOUNT}"  # path to your .json service account file in the Render filesystem
+    models:
+      default: ["claude-3-haiku@latest", "llama-3-70b-instruct"]
+    modelDisplayLabel: "Vertex AI"
