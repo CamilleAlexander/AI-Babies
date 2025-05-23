@@ -1,33 +1,57 @@
 # Full librechat.yaml with custom providers only
 
-version: "1.0"
+server:
+  port: 3080
+  host: 0.0.0.0
 
-providers:
-  - name: "Perplexity"
-    apiKey: "${PERPLEXITY_API_KEY}"
-    baseURL: "https://api.perplexity.ai/"
-    models:
-      default: ["sonar-pro"]
-    fetch: false
-    titleConvo: true
-    titleModel: "sonar-pro"
-    summarize: false
-    forcePrompt: false
-    dropParams: ["stop", "frequency_penalty"]
-    modelDisplayLabel: "Perplexity"
+ui:
+  defaultTheme: light
+  chat:
+    showModelSwitcher: true
+    defaultModel: vertex_claude
 
-  - name: "TogetherAI"
-    apiKey: "${TOGETHERAI_API_KEY}"
-    baseURL: "https://api.together.ai"
-    models:
-      default: ["black-forest-labs/FLUX.1-schnell-Free"]
-    fetch: true
-    modelDisplayLabel: "Together AI"
+logging:
+  level: info
 
-  - name: "GoogleVertex"
-    projectId: "${GOOGLE_PROJECT_ID}"
-    location: "${GOOGLE_LOCATION}"
-    credentialsFile: "${GOOGLE_SERVICE_ACCOUNT}"  # path to your .json service account file in the Render filesystem
+aiEndpoints:
+  vertexai:
+    enabled: true
+    default: vertex_claude
     models:
-      default: ["claude-3-haiku@latest", "llama-3-70b-instruct"]
-    modelDisplayLabel: "Vertex AI"
+      - id: vertex_claude
+        name: Claude 3.5 Haiku (Vertex)
+        provider: vertexai
+        model: claude-3-haiku@latest
+        title_convo: true
+        vision: false
+        embeddings: false
+      - id: vertex_llama
+        name: LLaMA 3 Scout (Vertex)
+        provider: vertexai
+        model: llama-3-70b-instruct
+        title_convo: true
+        vision: false
+        embeddings: false
+
+  togetherai:
+    enabled: true
+    default: together_flux
+    models:
+      - id: together_flux
+        name: FLUX.1 (Image Generator)
+        provider: togetherai
+        model: black-forest-labs/FLUX.1-schnell-Free
+        type: image
+        title_convo: false
+
+  perplexity:
+    enabled: true
+    default: perplexity_sonar
+    models:
+      - id: perplexity_sonar
+        name: Sonar Pro (Perplexity)
+        provider: perplexity
+        model: sonar-pro
+        type: chat
+        title_convo: true
+
