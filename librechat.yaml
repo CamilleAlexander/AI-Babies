@@ -1,18 +1,26 @@
 # Full librechat.yaml with custom providers only
 
-version: "1.0"
+version: 1.1.4
 
-providers:
-  - name: "Perplexity"
-    apiKey: "${PERPLEXITY_API_KEY}"
-    baseURL: "https://api.perplexity.ai/"
-    models:
-      default: ["sonar-pro"]
-    modelDisplayLabel: "Perplexity"
+endpoints:
+  custom:
+    - name: "Perplexity"
+      apiKey: "${PERPLEXITY_API_KEY}"
+      baseURL: "https://api.perplexity.ai/"
+      models:
+        default: ["sonar-pro"]
+      modelDisplayLabel: "Perplexity"
 
-  - name: "TogetherAI"
-    apiKey: "${TOGETHERAI_API_KEY}"
-    baseURL: "https://api.together.ai"
-    models:
-      default: ["black-forest-labs/FLUX.1-schnell-Free"]
-    modelDisplayLabel: "Together AI"
+    - name: "TogetherAI"
+      apiKey: "${TOGETHERAI_API_KEY}"
+      baseURL: "https://api.together.ai"
+      models:
+        default: ["black-forest-labs/FLUX.1-schnell-Free"]
+      modelDisplayLabel: "Together AI"
+
+    - name: "VertexAI"
+      apiKey: "${GOOGLE_API_KEY}"
+      baseURL: "https://vertex.googleapis.com"
+      models:
+        default: ["claude-3-haiku@latest", "llama-3-70b-instruct"]
+      modelDisplayLabel: "Google Vertex"
