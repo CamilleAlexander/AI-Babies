@@ -2,21 +2,12 @@
 
 version: "1.0"
 
-ui:
-  defaultTheme: light
-
 providers:
   - name: "Perplexity"
     apiKey: "${PERPLEXITY_API_KEY}"
     baseURL: "https://api.perplexity.ai/"
     models:
       default: ["sonar-pro"]
-    fetch: false
-    titleConvo: true
-    titleModel: "sonar-pro"
-    summarize: false
-    forcePrompt: false
-    dropParams: ["stop", "frequency_penalty"]
     modelDisplayLabel: "Perplexity"
 
   - name: "TogetherAI"
@@ -24,6 +15,4 @@ providers:
     baseURL: "https://api.together.ai"
     models:
       default: ["black-forest-labs/FLUX.1-schnell-Free"]
-    fetch: true
     modelDisplayLabel: "Together AI"
-
