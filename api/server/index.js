@@ -25,7 +25,7 @@ const routes = require('./routes');
 const { PORT, HOST, ALLOW_SOCIAL_LOGIN, DISABLE_COMPRESSION, TRUST_PROXY } = process.env ?? {};
 
 // Allow PORT=0 to be used for automatic free port assignment
-const port = isNaN(Number(PORT)) ? 3080 : Number(PORT);
+const port = process.env.PORT || 3000;
 const host = HOST || 'localhost';
 const trusted_proxy = Number(TRUST_PROXY) || 1; /* trust first proxy by default */
 
