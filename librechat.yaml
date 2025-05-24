@@ -12,8 +12,11 @@ endpoints:
       modelDisplayLabel: "Perplexity"
       
     - name: "VertexAI"
-      baseURL: "https://vertex.googleapis.com"
+      baseURL: "https://us-west1-aiplatform.googleapis.com"
+      modelDisplayLabel: "Google Vertex"
       serviceAccount: true
       models:
-        default: ["claude-3-5-haiku@20241022", "llama-4-scout-17b-16e-instruct-maas"]
-      modelDisplayLabel: "Google Vertex"
+        default: 
+          - claude-3-5-haiku@20241022
+          - llama-4-scout-17b-16e-instruct-maas"
+      
