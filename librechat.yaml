@@ -18,5 +18,5 @@ endpoints:
       models:
         default: 
           - claude-3-5-haiku@20241022
-          - llama-4-scout-17b-16e-instruct-maas"
+          - llama-4-scout-17b-16e-instruct-maas
       
