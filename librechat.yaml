@@ -15,5 +15,5 @@ endpoints:
     baseURL: "https://vertex.googleapis.com"
     serviceAccount: true
     models:
-      default: ["claude-3.5-haiku", "llama-4-scout"]
+      default: ["claude-3-5-haiku@20241022", "llama-4-scout-17b-16e-instruct-maas"]
     modelDisplayLabel: "Google Vertex"
