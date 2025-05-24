@@ -9,9 +9,9 @@ endpoints:
         default: ["sonar-pro"]
       modelDisplayLabel: "Perplexity"
 
-    - name: "LiteLLM Vertex"
+    - name: "LiteLLM"
       apiKey: ""  # leave blank unless you're securing it
       baseURL: "https://litellm-router-308665817092.us-west1.run.app"
       models:
         default: ["claude-3-5-haiku@20241022", "llama-4-scout-17b-16e-instruct-maas"]
-      modelDisplayLabel: "LiteLLM Vertex"
+      modelDisplayLabel: "LiteLLM"
