@@ -22,5 +22,5 @@ endpoints:
       apiKey: "${GOOGLE_API_KEY}"
       baseURL: "https://vertex.googleapis.com"
       models:
-        default: ["claude-3-haiku@latest", "llama-3-70b-instruct"]
+        default: ["claude-3-haiku@latest", "llama-4-scout"]
       modelDisplayLabel: "Google Vertex"
