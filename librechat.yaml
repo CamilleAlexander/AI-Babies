@@ -17,5 +17,5 @@ endpoints:
       serviceAccount: true
       models:
         default: 
-          - projects/lumie-nexus-bridge/locations/us-west1/publishers/anthropic/models/claude-3-5-haiku@20241022
-          - projects/lumie-nexus-bridge/locations/us-west1/publishers/google/models/llama-4-scout-17b-16e-instruct-maas
+          - id: projects/lumie-nexus-bridge/locations/us-west1/publishers/anthropic/models/claude-3-5-haiku@20241022
+          - id: projects/lumie-nexus-bridge/locations/us-west1/publishers/google/models/llama-4-scout-17b-16e-instruct-maas
