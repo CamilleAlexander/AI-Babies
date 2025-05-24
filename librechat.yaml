@@ -10,11 +10,4 @@ endpoints:
           - "sonar-pro"
       modelDisplayLabel: "Perplexity"
 
-    - name: "VertexAI"
-      baseURL: "https://us-west1-aiplatform.googleapis.com"
-      serviceAccount: true
-      modelDisplayLabel: "Google Vertex"
-      models:
-        default:
-          - "projects/lumie-nexus-bridge/locations/us-west1/publishers/anthropic/models/claude-3-5-haiku@20241022"
-          - "projects/lumie-nexus-bridge/locations/us-west1/publishers/google/models/llama-4-scout-17b-16e-instruct-maas"
+
