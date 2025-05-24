@@ -2,20 +2,21 @@
 
 version: 1.1.4
 
+vertexAI:
+  GOOGLE_PROJECT_ID: "lumie-nexus-bridge"
+  GOOGLE_REGION: "us-west1"
+  serviceAccount: true
+  models:
+    default:
+      - "claude-3-5-haiku@20241022"
+      - "llama-4-scout-17b-16e-instruct-maas"
+
 endpoints:
   custom:
     - name: "Perplexity"
       apiKey: "${PERPLEXITY_API_KEY}"
       baseURL: "https://api.perplexity.ai/"
       models:
-        default: ["sonar-pro"]
-      modelDisplayLabel: "Perplexity"
-
-    - name: "VertexAI"
-      baseURL: "https://us-west1-aiplatform.googleapis.com"
-      modelDisplayLabel: "Google Vertex"
-      serviceAccount: true
-      models:
         default:
-          - "projects/lumie-nexus-bridge/locations/us-west1/publishers/anthropic/models/claude-3-5-haiku@20241022"
-          - "projects/lumie-nexus-bridge/locations/us-west1/publishers/google/models/llama-4-scout-17b-16e-instruct-maas"
+          - "sonar-pro"
+      modelDisplayLabel: "Perplexity"
