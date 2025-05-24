@@ -19,8 +19,8 @@ endpoints:
       modelDisplayLabel: "Together AI"
 
     - name: "VertexAI"
-      apiKey: "${GOOGLE_API_KEY}"
       baseURL: "https://vertex.googleapis.com"
       models:
         default: ["claude-3-haiku@latest", "llama-4-scout"]
       modelDisplayLabel: "Google Vertex"
+      serviceAccount: true
