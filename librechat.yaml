@@ -11,10 +11,11 @@ endpoints:
 
     - name: "LiteLLMVertex"
       apiKey: "dummy"
-      baseURL: "https://litellm-router-308665817092.us-west1.run.app"
+      baseURL: "https://litellm-router-308665817092.us-west1.run.app/v1"
       models:
         default:
           - "claude-3-5-haiku@20241022"
           - "llama-4-scout-17b-16e-instruct-maas"
       modelDisplayLabel: "Vertex via LiteLLM"
+
 
