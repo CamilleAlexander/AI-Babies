@@ -11,7 +11,7 @@ endpoints:
 
     - name: "LiteLLMVertex"
       apiKey: "dummy"
-      baseURL: "https://litellm-router-308665817092.us-west1.run.app/v1"
+      baseURL: "https://litellm-308665817092.us-west1.run.app/v1/chat/completions"
       models:
         default:
           - "claude-3-5-haiku@20241022"
