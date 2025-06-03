@@ -10,10 +10,3 @@ endpoints:
           - "claude-3-5-haiku-20240212"
           - "llama-4-scout-17b-16e-instruct-maas"
       modeDisplayLabel: "Vertex via LiteLLM"
-
-server:
-  trustProxy: true
-
-registration:
-  socialLogins:
-    - google
