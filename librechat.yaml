@@ -5,10 +5,15 @@ endpoints:
     - name: "LiteLLMVertex"
       apiKey: "dummy"
       baseURL: "https://litellm-308665817092.us-west1.run.app/v1/chat/completions"
-      models:
+      modes:
         default:
-          - "claude-3-5-haiku@20241022"
+          - "claude-3-5-haiku-20240212"
           - "llama-4-scout-17b-16e-instruct-maas"
-      modelDisplayLabel: "Vertex via LiteLLM"
+      modeDisplayLabel: "Vertex via LiteLLM"
 
+server:
+  trustProxy: true
 
+registration:
+  socialLogins:
+    - google
