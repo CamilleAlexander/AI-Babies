@@ -3,7 +3,6 @@ version: 1.1.4
 endpoints:
   custom:
     - name: "LiteLLMVertex"
-      apiKey: "${VERTEX_API_KEY}"
       baseURL: "https://litellm-308665817092.us-west1.run.app/v1/chat/completions"
       models:
         default:
