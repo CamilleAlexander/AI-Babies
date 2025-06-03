@@ -3,10 +3,37 @@ version: 1.1.4
 endpoints:
   custom:
     - name: "LiteLLMVertex"
-      apiKey: "dummy"
+      apiKey: "${VERTEX_API_KEY}"
       baseURL: "https://litellm-308665817092.us-west1.run.app/v1/chat/completions"
-      modes:
+      models:
         default:
           - "claude-3-5-haiku-20240212"
           - "llama-4-scout-17b-16e-instruct-maas"
-      modeDisplayLabel: "Vertex via LiteLLM"
+        fetch: false
+      titleConvo: true
+      titleModel: "claude-3-5-haiku-20240212"
+      summarize: false
+      summaryModel: "claude-3-5-haiku-20240212"
+      forcePrompt: false
+      dropParams:
+        - "stop"
+        - "frequency_penalty"
+      modelDisplayLabel: "Vertex via LiteLLM"
+
+    - name: "Perplexity"
+      apiKey: "${PERPLEXITY_API_KEY}"
+      baseURL: "https://api.perplexity.ai/"
+      models:
+        default:
+          - "sonar-pro"
+          - "sonar"
+        fetch: false
+      titleConvo: true
+      titleModel: "sonar"
+      summarize: false
+      summaryModel: "sonar"
+      forcePrompt: false
+      dropParams:
+        - "stop"
+        - "frequency_penalty"
+      modelDisplayLabel: "Perplexity"
