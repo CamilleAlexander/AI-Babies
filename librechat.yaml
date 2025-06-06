@@ -37,3 +37,4 @@ endpoints:
         - "stop"
         - "frequency_penalty"
       modelDisplayLabel: "Perplexity"
+
