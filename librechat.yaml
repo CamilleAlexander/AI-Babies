@@ -4,7 +4,7 @@ endpoints:
   custom:
     - name: "LiteLLMVertex"
       baseURL: "https://litellm-308665817092.us-west1.run.app/v1/chat/completions"
-      authorizationType: "user_provided"
+      authorizationType: "none"
       models:
         default:
           - "claude-3-5-haiku-20240212"
