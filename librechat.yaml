@@ -7,17 +7,17 @@ endpoints:
       authorizationType: "none"
       models:
         default:
-          - "claude-3-5-haiku-20240212"
-          - "llama-4-scout-17b-16e-instruct-maas"
+          - "vertex-claude"
+          - "vertex-llama"
         list:
-          - model: "claude-3-5-haiku-20240212"
+          - model: "vertex-claude"
             label: "Claude via Vertex"
-          - model: "llama-4-scout-17b-16e-instruct-maas"
+          - model: "vertex-llama"
             label: "LLaMA via Vertex"
       titleConvo: true
-      titleModel: "claude-3-5-haiku-20240212"
+      titleModel: "vertex-claude"
       summarize: false
-      summaryModel: "claude-3-5-haiku-20240212"
+      summaryModel: "vertex-claude"
       forcePrompt: false
       dropParams:
         - "stop"
