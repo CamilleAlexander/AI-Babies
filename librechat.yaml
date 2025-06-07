@@ -9,7 +9,11 @@ endpoints:
         default:
           - "claude-3-5-haiku-20240212"
           - "llama-4-scout-17b-16e-instruct-maas"
-        fetch: false
+        list:
+          - model: "claude-3-5-haiku-20240212"
+            label: "Claude via Vertex"
+          - model: "llama-4-scout-17b-16e-instruct-maas"
+            label: "LLaMA via Vertex"
       titleConvo: true
       titleModel: "claude-3-5-haiku-20240212"
       summarize: false
@@ -27,7 +31,12 @@ endpoints:
         default:
           - "sonar-pro"
           - "sonar"
-        fetch: false
+        list:
+          - model: "sonar-pro"
+            label: "Sonar Pro"
+          - model: "sonar"
+            label: "Sonar"
+      fetch: false
       titleConvo: true
       titleModel: "sonar"
       summarize: false
@@ -37,4 +46,3 @@ endpoints:
         - "stop"
         - "frequency_penalty"
       modelDisplayLabel: "Perplexity"
-
