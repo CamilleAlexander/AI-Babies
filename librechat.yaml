@@ -2,47 +2,50 @@ version: 1.1.4
 
 endpoints:
   custom:
-    - name: "LiteLLMVertex"
-      baseURL: "https://litellm-308665817092.us-west1.run.app/v1/chat/completions"
-      authorizationType: "none"
-      models:
-        default:
-          - "claude-3-5-haiku-20240212"
-          - "llama-4-scout-17b-16e-instruct-maas"
-        list:
-          - model: "claude-3-5-haiku-20240212"
-            label: "Claude via Vertex"
-          - model: "llama-4-scout-17b-16e-instruct-maas"
-            label: "LLaMA via Vertex"
-      titleConvo: true
-      titleModel: "claude-3-5-haiku-20240212"
-      summarize: false
-      summaryModel: "claude-3-5-haiku-20240212"
-      forcePrompt: false
-      dropParams:
-        - "stop"
-        - "frequency_penalty"
-      modelDisplayLabel: "Vertex via LiteLLM"
-
     - name: "Perplexity"
       apiKey: "${PERPLEXITY_API_KEY}"
-      baseURL: "https://api.perplexity.ai/"
+      baseURL: "https://api.perplexity.ai"
       models:
-        default:
-          - "sonar-pro"
-          - "sonar"
+        default: ["sonar-pro"]
         list:
           - model: "sonar-pro"
             label: "Sonar Pro"
-          - model: "sonar"
-            label: "Sonar"
-      fetch: false
+          - model: "sonar-small"
+            label: "Sonar Small"
+      modelDisplayLabel: "Perplexity AI"
       titleConvo: true
-      titleModel: "sonar"
+      titleModel: "sonar-pro"
       summarize: false
-      summaryModel: "sonar"
-      forcePrompt: false
-      dropParams:
-        - "stop"
-        - "frequency_penalty"
-      modelDisplayLabel: "Perplexity"
+      summaryModel: "sonar-pro"
+      authorizationType: "bearer"
+
+    - name: "Cohere"
+      apiKey: "${COHERE_API_KEY}"
+      baseURL: "https://api.cohere.ai/v1"
+      models:
+        default: ["command-r"]
+        list:
+          - model: "command-r"
+            label: "Command R"
+      modelDisplayLabel: "Cohere Command R"
+      titleConvo: true
+      titleModel: "command-r"
+      summarize: false
+      summaryModel: "command-r"
+      authorizationType: "bearer"
+
+    - name: "HuggingFace"
+      apiKey: "${HF_API_KEY}"
+      baseURL: "https://api-inference.huggingface.co/models/meta-llama/Llama-4-Scout-16e-Instruct"
+      models:
+        default: ["llama-4-scout"]
+        list:
+          - model: "llama-4-scout"
+            label: "LLaMA 4 Scout"
+      modelDisplayLabel: "HF LLaMA 4 Scout"
+      titleConvo: true
+      titleModel: "llama-4-scout"
+      summarize: false
+      summaryModel: "llama-4-scout"
+      authorizationType: "bearer"
+
