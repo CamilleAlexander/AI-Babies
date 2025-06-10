@@ -36,17 +36,17 @@ endpoints:
 
     - name: "HuggingFace"
       apiKey: "${HF_API_KEY}"
-      baseURL: "https://api-inference.huggingface.co/models/meta-llama/Llama-4-Scout-16e-Instruct"
+      baseURL: "https://api-inference.huggingface.co/models/meta-llama/Llama-4-Maverick-17B-128E-Instruct"
       models:
-        default: ["llama-4-scout"]
+        default: ["llama-4-maverick"]
         list:
-          - model: "llama-4-scout"
-            label: "LLaMA 4 Scout"
-      modelDisplayLabel: "HF LLaMA 4 Scout"
+          - model: "llama-4-maverick"
+            label: "LLaMA 4 Maverick"
+      modelDisplayLabel: "HF LLaMA 4 Maverick"
       titleConvo: true
-      titleModel: "llama-4-scout"
+      titleModel: "llama-4-maverick"
       summarize: false
-      summaryModel: "llama-4-scout"
+      summaryModel: "llama-4-maverick"
       authorizationType: "bearer"
 
 
