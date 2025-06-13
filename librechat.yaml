@@ -23,15 +23,15 @@ endpoints:
       apiKey: "${COHERE_API_KEY}"
       baseURL: "https://api.cohere.ai/v1"
       models:
-        default: ["command-r"]
+        default: ["command-r-08-2024"]
         list:
-          - model: "command-r"
-            label: "Command R"
-      modelDisplayLabel: "Cohere Command R"
+          - model: "command-r-08-2024"
+            label: "Command R 08-2024"
+      modelDisplayLabel: "Cohere Command R 08-2024"
       titleConvo: true
-      titleModel: "command-r"
+      titleModel: "command-r-08-2024"
       summarize: false
-      summaryModel: "command-r"
+      summaryModel: "command-r-08-2024"
       authorizationType: "bearer"
 
     - name: "HuggingFace"
