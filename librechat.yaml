@@ -59,3 +59,18 @@ endpoints:
       summaryModel: "llama-4-maverick"
       authorizationType: "bearer"
 
+    - name: "Claude"
+      apiKey: "${PORTKEY_API_KEY}"
+      baseURL: "https://api.portkey.ai/v1"
+      models:
+        default: ["anthropic/claude-3-haiku-20240620"]
+        list:
+          - model: "anthropic/claude-3-haiku-20240620"
+            label: "Claude 3.5 Haiku"
+      modelDisplayLabel: "Claude 3.5"
+      titleConvo: true
+      titleModel: "anthropic/claude-3-haiku-20240620"
+      summarize: false
+      summaryModel: "anthropic/claude-3-haiku-20240620"
+      authorizationType: "bearer"
+
