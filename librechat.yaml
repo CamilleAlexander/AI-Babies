@@ -19,31 +19,6 @@ endpoints:
       summaryModel: "sonar-pro"
       authorizationType: "bearer"
 
-    - name: "Cohere"
-      apiKey: "${COHERE_API_KEY}"
-      baseURL: "https://api.cohere.ai/v1"
-      models:
-        default: ["command-r-08-2024"]
-        list:
-          - model: "command-r-08-2024"
-            label: "Command R 08-2024"
-      fetch: false
-      modelDisplayLabel: "Cohere Command R 08-2024"
-      titleConvo: true
-      titleModel: "command-r-08-2024"
-      dropParams:
-        - "stop"
-        - "user"
-        - "frequency_penalty"
-        - "presence_penalty"
-        - "temperature"
-        - "top_p"
-        - "stream"
-        - "max_tokens"
-      summarize: false
-      summaryModel: "command-r-08-2024"
-      authorizationType: "bearer"
-
     - name: "HuggingFace"
       apiKey: "${HF_API_KEY}"
       baseURL: "https://api-inference.huggingface.co/models/meta-llama/Llama-4-Maverick-17B-128E-Instruct"
@@ -73,4 +48,3 @@ endpoints:
       summarize: false
       summaryModel: "anthropic/claude-3-haiku-20240620"
       authorizationType: "bearer"
-
