@@ -28,23 +28,35 @@ endpoints:
           - model: "llama-4-maverick"
             label: "LLaMA 4 Maverick"
       modelDisplayLabel: "HF LLaMA 4 Maverick"
-      titleConvo: true
+      titleConvo: false
       titleModel: "llama-4-maverick"
       summarize: false
       summaryModel: "llama-4-maverick"
+      useChat: false
+      stream: false
       authorizationType: "bearer"
 
     - name: "Claude"
       apiKey: "${PORTKEY_API_KEY}"
       baseURL: "https://api.portkey.ai/v1"
       models:
-        default: ["anthropic/claude-3-haiku-20240620"]
+        default: ["vertex/claude-3-haiku@20240620"]
         list:
-          - model: "anthropic/claude-3-haiku-20240620"
+          - model: "vertex/claude-3-haiku@20240620"
             label: "Claude 3.5 Haiku"
       modelDisplayLabel: "Claude 3.5"
       titleConvo: true
-      titleModel: "anthropic/claude-3-haiku-20240620"
+      titleModel: "vertex/claude-3-haiku@20240620"
       summarize: false
-      summaryModel: "anthropic/claude-3-haiku-20240620"
+      summaryModel: "vertex/claude-3-haiku@20240620"
+      dropParams:
+        - "stop"
+        - "user"
+        - "frequency_penalty"
+        - "presence_penalty"
+        - "top_p"
+        - "temperature"
+        - "stream"
+        - "max_tokens"
       authorizationType: "bearer"
+
