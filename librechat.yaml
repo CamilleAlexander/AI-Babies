@@ -27,9 +27,19 @@ endpoints:
         list:
           - model: "command-r-08-2024"
             label: "Command R 08-2024"
+      fetch: false
       modelDisplayLabel: "Cohere Command R 08-2024"
       titleConvo: true
       titleModel: "command-r-08-2024"
+      dropParams:
+        - "stop"
+        - "user"
+        - "frequency_penalty"
+        - "presence_penalty"
+        - "temperature"
+        - "top_p"
+        - "stream"
+        - "max_tokens"
       summarize: false
       summaryModel: "command-r-08-2024"
       authorizationType: "bearer"
@@ -49,4 +59,5 @@ endpoints:
       summaryModel: "llama-4-maverick"
       authorizationType: "bearer"
 
+      authorizationType: "bearer"
 
