@@ -58,6 +58,5 @@ endpoints:
       summarize: false
       summaryModel: "llama-4-maverick"
       authorizationType: "bearer"
-
       authorizationType: "bearer"
 
