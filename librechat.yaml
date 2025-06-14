@@ -21,24 +21,37 @@ endpoints:
 
     - name: "HuggingFace"
       apiKey: "${HF_API_KEY}"
-      baseURL: "https://api-inference.huggingface.co/models/meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+      # FIX 1: Changed baseURL for HuggingFace.
+      # It should be the base inference API, not include the model path.
+      baseURL: "https://api-inference.huggingface.co"
       models:
-        default: ["llama-4-maverick"]
+        # The model name should include the full path as the baseURL no longer has it.
+        # This was already correct in your previous YAML.
+        default: ["meta-llama/Llama-4-Maverick-17B-128E-Instruct"]
         list:
-          - model: "llama-4-maverick"
+          - model: "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
             label: "LLaMA 4 Maverick"
       modelDisplayLabel: "HF LLaMA 4 Maverick"
       titleConvo: false
-      titleModel: "llama-4-maverick"
+      titleModel: "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
       summarize: false
-      summaryModel: "llama-4-maverick"
+      summaryModel: "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
       useChat: false
       stream: false
       authorizationType: "bearer"
 
     - name: "Claude"
-      apiKey: "${PORTKEY_API_KEY}"
+      # FIX 2: For Portkey, LibreChat docs suggest using "dummy" for apiKey
+      # and passing the actual API key in the headers.
+      apiKey: "dummy" # Changed from "${PORTKEY_API_KEY}"
       baseURL: "https://api.portkey.ai/v1"
+      headers:
+        # The actual Portkey API Key is passed via this header
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        # If using Portkey Virtual Keys, you would add:
+        # x-portkey-virtual-key: "YOUR_VIRTUAL_KEY_NAME"
+        # If using Portkey Configs, you would add:
+        # x-portkey-config: "pc-libre-xxx"
       models:
         default: ["vertex/claude-3-haiku@20240620"]
         list:
@@ -59,4 +72,3 @@ endpoints:
         - "stream"
         - "max_tokens"
       authorizationType: "bearer"
-
