@@ -40,35 +40,20 @@ endpoints:
       stream: false
       authorizationType: "bearer"
 
-    - name: "Claude"
-      # FIX 2: For Portkey, LibreChat docs suggest using "dummy" for apiKey
-      # and passing the actual API key in the headers.
-      apiKey: "dummy" # Changed from "${PORTKEY_API_KEY}"
-      baseURL: "https://api.portkey.ai/v1"
-      headers:
-        # The actual Portkey API Key is passed via this header
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        # If using Portkey Virtual Keys, you would add:
-        # x-portkey-virtual-key: "YOUR_VIRTUAL_KEY_NAME"
-        # If using Portkey Configs, you would add:
-        # x-portkey-config: "pc-libre-xxx"
-      models:
-        default: ["vertex/claude-3-haiku@20240620"]
-        list:
-          - model: "vertex/claude-3-haiku@20240620"
-            label: "Claude 3.5 Haiku"
-      modelDisplayLabel: "Claude 3.5"
-      titleConvo: true
-      titleModel: "vertex/claude-3-haiku@20240620"
-      summarize: false
-      summaryModel: "vertex/claude-3-haiku@20240620"
-      dropParams:
-        - "stop"
-        - "user"
-        - "frequency_penalty"
-        - "presence_penalty"
-        - "top_p"
-        - "temperature"
-        - "stream"
-        - "max_tokens"
-      authorizationType: "bearer"
+  - name: "Claude-AIMM"
+    apiKey: "dummy"  # Only needed if LiteLLM requires one, otherwise use "none" or leave it out
+    baseURL: "https://litellm-308665817092.us-west1.run.app/v1"
+    models:
+      default: ["claude-haiku"]
+      list:
+        - model: "claude-haiku"
+          label: "Claude 3.5 Haiku"
+    modelDisplayLabel: "Claude 3.5 AIMM"
+    titleConvo: true
+    titleModel: "claude-haiku"
+    summarize: false
+    summaryModel: "claude-haiku"
+    authorizationType: "none"
+    useChat: true
+    stream: true
+
