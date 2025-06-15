@@ -19,26 +19,6 @@ endpoints:
       summaryModel: "sonar-pro"
       authorizationType: "bearer"
 
-    - name: "Maverick-Vertex"
-      apiKey: "dummy"
-      baseURL: "https://api.portkey.ai/v1"
-      headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "Vertex AI Virtual Key"
-      models:
-        default: ["vertex/meta/models/llama-4-maverick-17b-128e-instruct-maas"]
-        list:
-          - model: "vertex/meta/models/llama-4-maverick-17b-128e-instruct-maas"
-            label: "LLaMA 4 Maverick"
-      modelDisplayLabel: "LLaMA 4 Maverick (Vertex)"
-      useChat: true
-      stream: true
-      titleConvo: true
-      titleModel: "vertex/meta/models/llama-4-maverick-17b-128e-instruct-maas"
-      summarize: false
-      summaryModel: "vertex/meta/models/llama-4-maverick-17b-128e-instruct-maas"
-      authorizationType: "bearer"
-
     - name: "Claude-AIMM"
       apiKey: "dummy"
       baseURL: "https://litellm-308665817092.us-west1.run.app/v1"
@@ -54,6 +34,25 @@ endpoints:
       summaryModel: "claude-haiku"
       authorizationType: "none"
       useChat: true
+      stream: true
+
+    - name: "Scout-LiteLLM"
+      apiKey: "dummy"
+      baseURL: "https://litellm-308665817092.us-west1.run.app/v1"
+      models:
+        default: ["llama-scout"]
+        list:
+          - model: "llama-scout"
+            label: "LLaMA 4 Scout"
+      modelDisplayLabel: "LLaMA 4 Scout"
+      titleConvo: true
+      titleModel: "llama-scout"
+      summarize: false
+      summaryModel: "llama-scout"
+      authorizationType: "none"
+      useChat: true
+      stream: true
+
       stream: true
 
 
