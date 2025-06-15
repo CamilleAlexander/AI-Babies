@@ -53,6 +53,5 @@ endpoints:
       useChat: true
       stream: true
 
-      stream: true
 
 
