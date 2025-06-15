@@ -19,41 +19,41 @@ endpoints:
       summaryModel: "sonar-pro"
       authorizationType: "bearer"
 
-    - name: "HuggingFace"
-      apiKey: "${HF_API_KEY}"
-      # FIX 1: Changed baseURL for HuggingFace.
-      # It should be the base inference API, not include the model path.
-      baseURL: "https://api-inference.huggingface.co"
+    - name: "Maverick-Vertex"
+      apiKey: "dummy"
+      baseURL: "https://api.portkey.ai/v1"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "Vertex AI Virtual Key"
       models:
-        # The model name should include the full path as the baseURL no longer has it.
-        # This was already correct in your previous YAML.
-        default: ["meta-llama/Llama-4-Maverick-17B-128E-Instruct"]
+        default: ["vertex/meta/models/llama-4-maverick-17b-128e-instruct-maas"]
         list:
-          - model: "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+          - model: "vertex/meta/models/llama-4-maverick-17b-128e-instruct-maas"
             label: "LLaMA 4 Maverick"
-      modelDisplayLabel: "HF LLaMA 4 Maverick"
-      titleConvo: false
-      titleModel: "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+      modelDisplayLabel: "LLaMA 4 Maverick (Vertex)"
+      useChat: true
+      stream: true
+      titleConvo: true
+      titleModel: "vertex/meta/models/llama-4-maverick-17b-128e-instruct-maas"
       summarize: false
-      summaryModel: "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
-      useChat: false
-      stream: false
+      summaryModel: "vertex/meta/models/llama-4-maverick-17b-128e-instruct-maas"
       authorizationType: "bearer"
 
-  - name: "Claude-AIMM"
-    apiKey: "dummy"  # Only needed if LiteLLM requires one, otherwise use "none" or leave it out
-    baseURL: "https://litellm-308665817092.us-west1.run.app/v1"
-    models:
-      default: ["claude-haiku"]
-      list:
-        - model: "claude-haiku"
-          label: "Claude 3.5 Haiku"
-    modelDisplayLabel: "Claude 3.5 AIMM"
-    titleConvo: true
-    titleModel: "claude-haiku"
-    summarize: false
-    summaryModel: "claude-haiku"
-    authorizationType: "none"
-    useChat: true
-    stream: true
+    - name: "Claude-AIMM"
+      apiKey: "dummy"
+      baseURL: "https://litellm-308665817092.us-west1.run.app/v1"
+      models:
+        default: ["claude-haiku"]
+        list:
+          - model: "claude-haiku"
+            label: "Claude 3.5 Haiku"
+      modelDisplayLabel: "Claude 3.5 AIMM"
+      titleConvo: true
+      titleModel: "claude-haiku"
+      summarize: false
+      summaryModel: "claude-haiku"
+      authorizationType: "none"
+      useChat: true
+      stream: true
+
 
