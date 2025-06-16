@@ -36,22 +36,23 @@ endpoints:
       useChat: true
       stream: true
 
-    - name: "Scout-LiteLLM"
-      apiKey: "dummy"
-      baseURL: "https://litellm-308665817092.us-west1.run.app/v1"
-      models:
-        default: ["llama-scout"]
-        list:
-          - model: "llama-scout"
-            label: "LLaMA 4 Scout"
-      modelDisplayLabel: "LLaMA 4 Scout"
-      titleConvo: true
-      titleModel: "llama-scout"
-      summarize: false
-      summaryModel: "llama-scout"
-      authorizationType: "none"
-      useChat: true
-      stream: true
+  - name: "OpenRouter"
+    apiKey: "${OPENROUTER_KEY}"
+    baseURL: "https://openrouter.ai/api/v1"
+    models:
+      default: ["meta-llama/llama-4-scout"]
+      list:
+        - model: "meta-llama/llama-4-scout"
+          label: "LLaMA 4 Scout"
+    titleConvo: true
+    titleModel: "meta-llama/llama-4-scout"
+    summarize: false
+    summaryModel: "meta-llama/llama-4-scout"
+    dropParams: ["stop"]
+    modelDisplayLabel: "LLaMA 4 Scout (OpenRouter)"
+    useChat: true
+    stream: true
+
 
 
 
