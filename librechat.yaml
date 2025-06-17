@@ -22,7 +22,7 @@ endpoints:
       stream: true
 
     - name: "Claude-AIML"
-      apiKey: "dummy"
+      apiKey: "${AIML_API_KEY}"
       baseURL: "https://litellm-308665817092.us-west1.run.app/v1"
       models:
         default: ["claude-haiku"]
