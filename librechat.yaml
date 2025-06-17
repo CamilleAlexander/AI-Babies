@@ -21,7 +21,7 @@ endpoints:
       useChat: true
       stream: true
 
-    - name: "Claude-AIMM"
+    - name: "Claude-AIML"
       apiKey: "dummy"
       baseURL: "https://litellm-308665817092.us-west1.run.app/v1"
       models:
@@ -29,7 +29,7 @@ endpoints:
         list:
           - model: "claude-haiku"
             label: "Claude 3.5 Haiku"
-      modelDisplayLabel: "Claude 3.5 AIMM"
+      modelDisplayLabel: "Claude 3.5 AIML"
       titleConvo: true
       titleModel: "claude-haiku"
       summarize: false
@@ -54,5 +54,3 @@ endpoints:
       dropParams: ["stop"]
       useChat: true
       stream: true
-
-
