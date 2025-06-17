@@ -23,21 +23,21 @@ endpoints:
 
     - name: "Claude-AIML"
       apiKey: "${AIML_API_KEY}"
-      baseURL: "https://api.aimlapi.com/v2"
+      baseURL: "https://api.aimlapi.com/v1"
       models:
-        default: ["openai/claude/claude-3-5-haiku"]
+        default: ["anthropic/claude-3-5-haiku"]
         list:
-          - model: "openai/claude/claude-3-5-haiku"
+          - model: "anthropic/claude-3-5-haiku"
             label: "Claude 3.5 Haiku"
       modelDisplayLabel: "Claude 3.5 AIML"
       titleConvo: true
-      titleModel: "openai/claude/claude-3-5-haiku"
+      titleModel: "anthropic/claude-3-5-haiku"
       summarize: false
-      summaryModel: "openai/claude/claude-3-5-haiku"
+      summaryModel: "anthropic/claude-3-5-haiku"
       authorizationType: "bearer"
       useChat: true
-      stream: false      # 🔕 AI/ML Claude doesn't support stream
-      tools: true        # 🛠️ ENABLE plugin tools support!
+      stream: false
+      tools: true
 
     - name: "OpenRouter"
       apiKey: "${OPENROUTER_KEY}"
