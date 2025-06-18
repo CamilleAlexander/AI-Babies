@@ -2,7 +2,6 @@ version: 1.1.4
 
 endpoints:
   custom:
-
     - name: "Perplexity"
       apiKey: "${PERPLEXITY_API_KEY}"
       baseURL: "https://api.perplexity.ai"
@@ -10,17 +9,40 @@ endpoints:
         default: ["sonar-pro"]
         list:
           - model: "sonar-pro"
-            label: "Perplexity Sonar Pro"
+            label: "Sonar Pro"
           - model: "sonar-small"
-            label: "Perplexity Sonar Small"
-      modelDisplayLabel: "Perplexity"
+            label: "Sonar Small"
+      modelDisplayLabel: "Perplexity AI"
       titleConvo: true
       titleModel: "sonar-pro"
       summarize: false
       summaryModel: "sonar-pro"
       authorizationType: "bearer"
-      useChat: true
-      stream: true
+
+    - name: "Cohere"
+      apiKey: "${COHERE_API_KEY}"
+      baseURL: "https://api.cohere.ai/v1"
+      models:
+        default: ["command-r-08-2024"]
+        list:
+          - model: "command-r-08-2024"
+            label: "Command R 08-2024"
+      fetch: false
+      modelDisplayLabel: "Cohere Command R 08-2024"
+      titleConvo: true
+      titleModel: "command-r-08-2024"
+      dropParams:
+        - "stop"
+        - "user"
+        - "frequency_penalty"
+        - "presence_penalty"
+        - "temperature"
+        - "top_p"
+        - "stream"
+        - "max_tokens"
+      summarize: false
+      summaryModel: "command-r-08-2024"
+      authorizationType: "bearer"
 
     - name: "Portkey"
       apiKey: "dummy"
@@ -29,36 +51,32 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "${PORTKEY_VIRTUAL_KEY}"
       models:
-        default: ["cohere/command-r"]
+        default: ["command-r"]
         list:
-          - model: "cohere/command-r"
-            label: "Command R"
-          - model: "cohere/command-r-plus"
-            label: "Command R Plus"
-      modelDisplayLabel: "Portkey (Agents)"
+          - model: "command-r"
+            label: "Command R (Portkey)"
+          - model: "command-r-plus"
+            label: "Command R Plus (Portkey)"
+      modelDisplayLabel: "Portkey Agents"
       titleConvo: true
-      titleModel: "cohere/command-r"
+      titleModel: "command-r"
       summarize: false
-      summaryModel: "cohere/command-r"
+      summaryModel: "command-r"
       useChat: true
       stream: true
       tools: true
 
-    - name: "Groq"
-      apiKey: "${GROQ_API_KEY}"
-      baseURL: "https://api.groq.com/openai/v1/"
+    - name: "HuggingFace"
+      apiKey: "${HF_API_KEY}"
+      baseURL: "https://api-inference.huggingface.co/models/meta-llama/Llama-4-Maverick-17B-128E-Instruct"
       models:
-        default: ["meta-llama/llama-4-maverick-17b-128e-instruct"]
+        default: ["llama-4-maverick"]
         list:
-          - model: "meta-llama/llama-4-maverick-17b-128e-instruct"
-            label: "Maverick 17B"
-          - model: "meta-llama/llama-4-scout-17b-16e-instruct"
-            label: "Scout 17B"
-      fetch: false
+          - model: "llama-4-maverick"
+            label: "LLaMA 4 Maverick"
+      modelDisplayLabel: "HF LLaMA 4 Maverick"
       titleConvo: true
-      titleModel: "meta-llama/llama-4-maverick-17b-128e-instruct"
-      modelDisplayLabel: "Groq Inference"
+      titleModel: "llama-4-maverick"
       summarize: false
-      useChat: true
-      stream: true
-      tools: true
+      summaryModel: "llama-4-maverick"
+      authorizationType: "bearer"
