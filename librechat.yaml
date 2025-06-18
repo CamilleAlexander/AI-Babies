@@ -2,6 +2,7 @@ version: 1.1.4
 
 endpoints:
   custom:
+
     - name: "Perplexity"
       apiKey: "${PERPLEXITY_API_KEY}"
       baseURL: "https://api.perplexity.ai"
@@ -9,39 +10,14 @@ endpoints:
         default: ["sonar-pro"]
         list:
           - model: "sonar-pro"
-            label: "Sonar Pro"
+            label: "Perplexity Sonar Pro"
           - model: "sonar-small"
-            label: "Sonar Small"
+            label: "Perplexity Sonar Small"
       modelDisplayLabel: "Perplexity AI"
       titleConvo: true
       titleModel: "sonar-pro"
       summarize: false
       summaryModel: "sonar-pro"
-      authorizationType: "bearer"
-
-    - name: "Cohere"
-      apiKey: "${COHERE_API_KEY}"
-      baseURL: "https://api.cohere.ai/v1"
-      models:
-        default: ["command-r-08-2024"]
-        list:
-          - model: "command-r-08-2024"
-            label: "Command R 08-2024"
-      fetch: false
-      modelDisplayLabel: "Cohere Command R 08-2024"
-      titleConvo: true
-      titleModel: "command-r-08-2024"
-      dropParams:
-        - "stop"
-        - "user"
-        - "frequency_penalty"
-        - "presence_penalty"
-        - "temperature"
-        - "top_p"
-        - "stream"
-        - "max_tokens"
-      summarize: false
-      summaryModel: "command-r-08-2024"
       authorizationType: "bearer"
 
     - name: "Portkey"
@@ -66,17 +42,22 @@ endpoints:
       stream: true
       tools: true
 
-    - name: "HuggingFace"
-      apiKey: "${HF_API_KEY}"
-      baseURL: "https://api-inference.huggingface.co/models/meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+    - name: "Groq"
+      apiKey: "${GROQ_API_KEY}"
+      baseURL: "https://api.groq.com/openai/v1/"
       models:
-        default: ["llama-4-maverick"]
+        default: ["meta-llama/llama-4-maverick-17b-128e-instruct"]
         list:
-          - model: "llama-4-maverick"
-            label: "LLaMA 4 Maverick"
-      modelDisplayLabel: "HF LLaMA 4 Maverick"
+          - model: "meta-llama/llama-4-maverick-17b-128e-instruct"
+            label: "Maverick 17B"
+          - model: "meta-llama/llama-4-scout-17b-16e-instruct"
+            label: "Scout 17B"
+      fetch: false
       titleConvo: true
-      titleModel: "llama-4-maverick"
+      titleModel: "meta-llama/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "Groq Inference"
       summarize: false
-      summaryModel: "llama-4-maverick"
-      authorizationType: "bearer"
+      useChat: true
+      stream: true
+      tools: true
+
