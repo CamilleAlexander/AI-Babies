@@ -22,22 +22,21 @@ endpoints:
       stream: true
 
     - name: "Claude-AIML"
-      apiKey: "${AIML_API_KEY}"
-      baseURL: "https://api.aimlapi.com/v1"
+      baseURL: "https://your-litellm-proxy-url/v1"
       models:
-        default: ["anthropic/claude-3-5-haiku"]
+        default: ["aimlapi/claude/claude-3-5-haiku"]
         list:
-          - model: "anthropic/claude-3-5-haiku"
-            label: "Claude 3.5 Haiku"
+          - model: "aimlapi/claude/claude-3-5-haiku"
+            label: "Claude 3.5 Haiku (via LiteLLM)"
       modelDisplayLabel: "Claude 3.5 AIML"
       titleConvo: true
-      titleModel: "anthropic/claude-3-5-haiku"
+      titleModel: "aimlapi/claude/claude-3-5-haiku"
       summarize: false
-      summaryModel: "anthropic/claude-3-5-haiku"
-      authorizationType: "bearer"
+      summaryModel: "aimlapi/claude/claude-3-5-haiku"
+      authorizationType: "none"
       useChat: true
       stream: false
-      tools: true
+      tools: false
 
     - name: "OpenRouter"
       apiKey: "${OPENROUTER_KEY}"
